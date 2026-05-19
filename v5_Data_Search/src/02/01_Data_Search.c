@@ -17,8 +17,7 @@ void append(uintptr_t addr){
 }
 
 void state(LPVOID addr_min, LPVOID addr_max){
-    //"하나의 함수는 딱 한 가지 일만 완벽하게 해야 한다"는 것을 반영
-    //MEMORY_BASIC_INFORMATION을 인자로 받은 이유는 main에서도  
+    //하나의 함수는 딱 한 가지 일만 완벽하게 해야 합니다.
     
     MEMORY_BASIC_INFORMATION mbi;  
 
@@ -44,7 +43,7 @@ void search(LPVOID data){
 }
 
 int main(void){
-    SYSTEM_INFO si; //SYSTEM_INFO는 OS에 정보를 요청하는 시스템 콜. 한 번만 호출해서 인자로 넘기는 것이 효율적.
+    SYSTEM_INFO si; //SYSTEM_INFO는 OS에 정보를 요청하는 시스템 콜. 한 번만 호출해서 인자로 넘기는 것이 효율적입니다.
     GetSystemInfo(&si);
 
     unsigned char* high_addr = si.lpMaximumApplicationAddress;
