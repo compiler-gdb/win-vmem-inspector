@@ -16,14 +16,14 @@ void mem_data(LPVOID targetAddr){
     printf("%p | ", addr);
 
     for(int i=0; i<16; i++){
-        printf("%02x", addr[i]); //*addr 변수를 받을때 포인터로 받았음. uint8_t라도 주소 자체는 전부 담김.(addr + i)이므로  addr 주소에 있는 data를 꺼내서 1byte 단위로 꺼내옴.
-        if (i != 7){
+
+        printf("%02x ", addr[i]); //*addr 변수를 받을때 포인터로 받았음. uint8_t라도 주소 자체는 전부 담김.(addr + i)이므로  addr 주소에 있는 data를 꺼내서 1byte 단위로 꺼내옴.
+        
+        if (i == 7){
             printf(" ");
         }
-        else{
-            printf("  ");
-        }
     }
+    
 
     printf(" |  ");
 
