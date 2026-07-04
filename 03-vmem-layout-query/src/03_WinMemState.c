@@ -2,6 +2,16 @@
 #include <stdint.h>
 #include <windows.h>
 
+const char* getStateString(DWORD state){
+    switch (state){
+        case MEM_COMMIT:  return "MEM_COMMIT";
+        case MEM_FREE:    return "MEM_FREE";
+        case MEM_RESERVE: return "MEM_RESERVE";
+        default:          return "UNKNOWN";
+    }
+}
+
+
 void mem_value(SYSTEM_INFO* si){
     MEMORY_BASIC_INFORMATION mbi;
 
@@ -13,7 +23,7 @@ void mem_value(SYSTEM_INFO* si){
     while(addr_min <= addr_max){
         if(VirtualQuery(addr_min, &mbi, sizeof(mbi)) == sizeof(mbi)){
             // 현재 영역의 State를 출력
-            printf("Address: %p | State: %lu\n", (void*)addr_min, mbi.State);
+            printf("Address: %p | State: %-s\n", (void*)addr_min, getStateString(mbi.State));
             
             addr_min += mbi.RegionSize; //하나의 구역에 State는 모두 동일합니다.
         }else{
