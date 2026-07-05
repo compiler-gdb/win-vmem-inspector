@@ -1,4 +1,4 @@
-// PAGE_READONLY이면 STATE 상관없이 모두 출력하는 버그를 수정했습니다.
+//PAGE_READONLY이면 STATE 상관없이 모두 출력하는 버그를 수정했습니다.
 
 #include <stdio.h>
 #include <stdint.h>
