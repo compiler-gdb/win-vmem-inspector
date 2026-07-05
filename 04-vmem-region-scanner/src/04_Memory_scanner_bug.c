@@ -1,5 +1,4 @@
-//Region이 달라지면 해당 구역의 State를 출력하고 Data를 출력하도록 의도했으나,
-//03에서는 모든 검사를 마친 후, State를 출력하는 버그가 존재.
+//40번 line에 PAGE_READONLY면 모두 통과시키는 버그 발생
 
 #include <stdio.h>
 #include <stdint.h>
@@ -57,4 +56,3 @@ int main(void){
 
     return 0;
 }
-
